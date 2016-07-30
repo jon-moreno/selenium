@@ -1,0 +1,62 @@
+<script type="text/javascript">
+        var MoatPageOptions = {
+            'entityId'              : 12774,
+            'entityName'            : 'State Farm',
+            'entityLabel'           : 'Advertiser',
+            'entityType'            : 'advertiser',
+            'creativePageSize'      : 21,
+            'creativeLoadMore'      : true,
+
+            'reportType'            : 'display',
+            'indexer_by_device'     : {"mobile": "mobile", "desktop": "desktop"},
+            'startDate'             : new Date('May 01, 2012'),
+            'endDate'               : new Date('May 30, 2016'),
+            'minDate'               : new Date('May 01, 2012'),
+            'maxDate'               : new Date('May 30, 2016'),
+            'period'                : 'month',
+
+            'loadTime'              : '1464714151.14',
+            'timeHash'              : '2372123189418936782',
+            'baseCreativeUrl'       : '/creatives/advertiser/state-farm', 
+
+            'shouldShowCreativeId'  : false,
+
+            'adPlaceholderUrlPrefix': "https://dsptlotxl8noa.cloudfront.net/img/placeholders/",
+            'adPlaceholderSizes'    : [[600, 100], [290, 50], [300, 250], [160, 600], [580, 100], [320, 50], [728, 90], [300, 50], [640, 100], [300, 600]],
+
+            'redoScreenshotButton'  : false,
+            'hideCreativeButton'    : false,
+            'unhideCreativeButton'  : false,
+            'brandDomainFlagURLs'   : false,
+            'columnOptions': {
+                'width': 263,
+                'padding': 10,
+                'numColumns': 3,
+                'gutterWidth': 10,
+                'borderWidth': 1
+            },
+            'popupOptions': {
+                'minWidth': 240,
+                'padding': 10,
+                'border': 2
+            }
+        };
+        MoatPageOptions['formattedStartDate'] = $.datepicker.formatDate('yy-m-d', MoatPageOptions['startDate']);
+        MoatPageOptions['formattedEndDate'] = $.datepicker.formatDate('yy-m-d', MoatPageOptions['endDate']);
+        MoatPageOptions['formattedMinDate'] = $.datepicker.formatDate('yy-m-d', MoatPageOptions['minDate']);
+        MoatPageOptions['formattedMaxDate'] = $.datepicker.formatDate('yy-m-d', MoatPageOptions['maxDate']);
+    </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            MoatPageOptions.sharedCreative = null;
+            MoatPageOptions.columnOptions.numColumns = 4;
+            MoatPageOptions.creativePageSize = 42;
+
+            competitiveViewModel = new CompetitiveViewModel(MoatPageOptions, false);
+            competitiveViewModel.demoRequest = new DemoRequest('Moat Pro');
+            ko.applyBindings(competitiveViewModel, $(".master")[0]);
+            $('.demo-button').click(competitiveViewModel.demoRequest.demoButtonClick);
+        });
+    </script>
